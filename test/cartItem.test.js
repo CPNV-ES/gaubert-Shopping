@@ -8,10 +8,10 @@
 
 "use strict";
 
-let CartItem =  require('../CartItem/CartItem.js');
-const InvalidArticleIdException = require("../CartItem/InvalidArticleIdException.js");
-const InvalidQuantityException = require("../CartItem/InvalidQuantityException.js");
-const InvalidPriceException = require("../CartItem/InvalidPriceException.js");
+let CartItem = require('../src/CartItem/CartItem.js');
+const InvalidArticleIdException = require("../src/CartItem/InvalidArticleIdException.js");
+const InvalidQuantityException = require("../src/CartItem/InvalidQuantityException.js");
+const InvalidPriceException = require("../src/CartItem/InvalidPriceException.js");
 
 test('allGetters_NominalCase_Success', () => {
     //given
@@ -115,7 +115,7 @@ test('price_setPriceNominalCase_Success', () => {
     let name = "Iphone 27";
     let quantity = 10;
     let price = 20;
-    let cartItem = new CartItem(articleId, name,quantity, price);
+    let cartItem = new CartItem(articleId, name, quantity, price);
     let expectedPrice = 22;
     let expectedTotal = 220;
 
