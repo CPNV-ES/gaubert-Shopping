@@ -40,8 +40,8 @@ module.exports = class CartItem {
     }
 
     set quantity(value) {
-        if (value < 0) {
-            throw new Error("Quantity cannot be less than zero.");
+        if (value < 1) {
+            throw new InvalidQuantityException;
         }
         this.#quantity = value;
     }
@@ -51,8 +51,8 @@ module.exports = class CartItem {
     }
 
     set price(value) {
-        if (value < 0) {
-            throw new Error("Price cannot be less than zero.");
+        if (value < 10) {
+            throw new InvalidPriceException;
         }
         this.#price = value;
     }
