@@ -30,6 +30,9 @@ module.exports = class CartItem {
         return total;
     }
 
+    count() {
+        return this.#items.length;
+    }
     //endregion public methods
 
     //region private methods
