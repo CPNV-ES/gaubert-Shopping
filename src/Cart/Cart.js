@@ -21,6 +21,8 @@ module.exports = class CartItem {
     }
 
     get total() {
+        if (Array.isArray(this.#items) && this.#items.length === 0)
+            throw new EmptyCartException;
         let total = 0;
         this.#items.forEach(it => {
             total += it.price * it.quantity;
