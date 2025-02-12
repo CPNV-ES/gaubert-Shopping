@@ -14,6 +14,8 @@ module.exports = class CartItem {
     }
 
     get items() {
+        if (Array.isArray(this.#items) && this.#items.length === 0)
+            throw new EmptyCartException;
         return this.#items;
     }
 
