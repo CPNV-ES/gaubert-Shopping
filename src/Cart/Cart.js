@@ -1,5 +1,6 @@
 "use strict";
 
+const CartItem = require("../CartItem/CartItem.js");
 const EmptyCartException = require("./EmptyCartException.js");
 const UpdateCartException = require("./UpdateCartException.js")
 
@@ -17,6 +18,14 @@ module.exports = class CartItem {
         if (Array.isArray(this.#items) && this.#items.length === 0)
             throw new EmptyCartException;
         return this.#items;
+    }
+
+    get total() {
+        let total = 0;
+        this.#items.forEach(it => {
+            total += it.price * it.quantity;
+        });
+        return total;
     }
 
     //endregion public methods
