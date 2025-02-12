@@ -30,8 +30,16 @@ module.exports = class CartItem {
         return total;
     }
 
-    count() {
-        return this.#items.length;
+    count(distinct) {
+        if (Array.isArray(this.#items) && this.#items.length === 0)
+            throw new EmptyCartException;
+        if (distinct === true)
+            return this.#items.length;
+        let total = 0;
+        this.#items.forEach(it => {
+            total += it.quantity;
+        });
+        return total;
     }
     //endregion public methods
 
