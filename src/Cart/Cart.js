@@ -31,6 +31,8 @@ module.exports = class CartItem {
     }
 
     add(items) {
+        if (items == null)
+            throw new UpdateCartException;
         if (Array.isArray(items)) {
             items.forEach(it => {
                 this.#items.push(it);
