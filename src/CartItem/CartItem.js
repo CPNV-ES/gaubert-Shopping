@@ -31,9 +31,9 @@ module.exports = class CartItem {
         return this.#articleId;
     }
 
-    get name() {
-        return this.#name;
-    }
+    // get name() {
+    //     return this.#name;
+    // }
 
     get quantity() {
         return this.#quantity;
