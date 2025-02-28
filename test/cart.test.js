@@ -159,3 +159,14 @@ test('add_EmptyCartEmptyItemsToAdd_ThrowException', () => {
     //then
     //Exception is thrown
 })
+
+test('checkout_emptyCart_ThrowException', () => {
+    //given
+    let cart = new Cart(null);
+
+    //when
+    expect(() => cart.checkout()).toThrow(EmptyCartException);
+
+    //then
+    //Exception is thrown
+})
